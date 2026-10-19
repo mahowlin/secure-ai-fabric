@@ -1,0 +1,4 @@
+# Non-secret execution profile; supply passwords privately via TF_VAR_apic_password.
+project_dir = ".."
+apic_url = "https://apic.example.invalid"
+apic_username = "site-automation-user"

@@ -1,0 +1,9 @@
+.terraform/
+*.tfstate*
+*.tfplan
+*.tfvars
+!*.tfvars.example
+.env
+
+# Local module/provider caches, including cache symlinks
+**/.terraform

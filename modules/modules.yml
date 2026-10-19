@@ -1,0 +1,227 @@
+# NAC ACI Modules — tenant and the example site access-policy management
+#
+# Enables tenant-scoped resources plus selected access-policy resources needed
+# for the example site existing access-policy adoption. Fabric, pod, node, and unrelated
+# interface/policy categories remain disabled.
+# Keys are NAC Terraform resource names (merged into local.modules).
+# See terraform-aci-nac-aci/defaults/modules.yaml for full list.
+
+modules:
+  # --- Access policies: the example site adoption scope ---
+  aci_aaep: true
+  aci_vlan_pool: true
+  aci_physical_domain: true
+  aci_routed_domain: true
+  aci_access_fex_interface_profile: false
+  aci_access_fex_interface_selector: false
+  aci_access_leaf_interface_policy_group: true
+  aci_access_leaf_interface_profile: true
+  aci_access_leaf_interface_selector: true
+  aci_access_leaf_switch_policy_group: false
+  aci_access_leaf_switch_profile: true
+  aci_access_monitoring_policy: false
+  aci_access_span_destination_group: false
+  aci_access_span_filter_group: false
+  aci_access_span_source_group: false
+  aci_access_spine_interface_policy_group: false
+  aci_access_spine_interface_profile: false
+  aci_access_spine_interface_selector: false
+  aci_access_spine_switch_policy_group: false
+  aci_access_spine_switch_profile: false
+  aci_cdp_policy: true
+  aci_forwarding_scale_policy: false
+  aci_interface_configuration: false
+  aci_interface_shutdown: false
+  aci_interface_type: false
+  aci_l2_policy: true
+  aci_link_level_policy: true
+  aci_lldp_policy: true
+  aci_mcp: true
+  aci_mcp_policy: true
+  aci_mst_policy: false
+  aci_port_channel_member_policy: false
+  aci_port_channel_policy: true
+  aci_port_security_policy: false
+  aci_qos: true
+  aci_qos_policy: true
+  aci_storm_control_policy: false
+  aci_spanning_tree_policy: true
+  aci_vpc_policy: false
+
+  # --- Fabric policies: all disabled ---
+  aci_banner: false
+  aci_config_passphrase: false
+  aci_fabric_isis_policy: false
+  aci_fabric_isis_bfd: false
+  aci_bgp_policy: false
+  aci_fabric_l2_mtu: false
+  aci_ca_certificate: false
+  aci_keyring: false
+  aci_date_time_format: false
+  aci_date_time_policy: false
+  aci_dns_policy: false
+  aci_snmp_policy: false
+  aci_snmp_trap_policy: false
+  aci_syslog_policy: false
+  aci_tacacs: false
+  aci_external_connectivity_policy: false
+  aci_monitoring_policy_common: false
+  aci_monitoring_policy_custom: false
+  aci_fabric_wide_settings: false
+  aci_fabric_scheduler: false
+  aci_port_tracking: false
+  aci_ptp: false
+  aci_ptp_profile: false
+  aci_ip_aging: false
+  aci_infra_dscp_translation_policy: false
+  aci_fabric_leaf_interface_profile: false
+  aci_fabric_leaf_interface_selector: false
+  aci_fabric_leaf_switch_policy_group: false
+  aci_fabric_leaf_switch_profile: false
+  aci_fabric_link_level_policy: false
+  aci_fabric_spine_interface_profile: false
+  aci_fabric_spine_interface_selector: false
+  aci_fabric_spine_switch_policy_group: false
+  aci_fabric_spine_switch_profile: false
+  aci_fabric_pod_policy_group: false
+  aci_fabric_pod_profile: false
+  aci_fabric_span_destination_group: false
+  aci_fabric_span_source_group: false
+  aci_geolocation: false
+  aci_endpoint_loop_protection: false
+  aci_rogue_endpoint_control: false
+  aci_error_disabled_recovery: false
+  aci_management_access_policy: false
+  aci_config_export: false
+  aci_remote_location: false
+  aci_smart_licensing: false
+  aci_apic_connectivity_preference: false
+  aci_control_plane_mtu: false
+  aci_system_global_gipo: false
+  aci_system_performance: false
+
+  # --- Pod policies: all disabled ---
+  aci_coop_policy: false
+  aci_pod_setup: false
+  aci_macsec_keychain_policies: false
+  aci_macsec_parameters_policy: false
+  aci_macsec_interfaces_policy: false
+
+  # --- Node policies: all disabled ---
+  aci_maintenance_group: false
+  aci_firmware_group: false
+  aci_node_control_policy: false
+  aci_node_registration: false
+  aci_oob_node_address: false
+  aci_inband_node_address: false
+  aci_vpc_group: false
+  aci_switch_configuration: false
+
+  # --- Interface policies: all disabled ---
+  aci_fabric_interface_configuration: false
+  aci_fabric_leaf_interface_policy_group: false
+
+  # --- AAA: disabled ---
+  aci_aaa: false
+  aci_user: false
+  aci_login_domain: false
+  aci_ldap: false
+  aci_radius: false
+  aci_rbac_node_rule: false
+
+  # --- VMM: disabled ---
+  aci_vmware_vmm_domain: false
+  aci_nutanix_vmm_domain: false
+
+  # --- Tenant resources: enabled ---
+  aci_tenant: true
+  aci_vrf: true
+  aci_bridge_domain: true
+  aci_application_profile: true
+  aci_endpoint_group: true
+  aci_l3out: true
+  aci_l3out_node_profile: true
+  aci_l3out_interface_profile: true
+  aci_external_endpoint_group: true
+  aci_contract: true
+  aci_filter: true
+  aci_match_rule: true
+  aci_route_control_route_map: true
+  aci_bfd_interface_policy: true
+  aci_bfd_policy: true
+  aci_bgp_best_path_policy: false
+  aci_bgp_peer_prefix_policy: true
+  aci_bgp_timer_policy: true
+  aci_bgp_address_family_context_policy: true
+  aci_bgp_route_summarization_policy: true
+  aci_set_rule: true
+  aci_route_tag_policy: true
+  aci_ip_sla_policy: true
+  aci_endpoint_retention_policy: true
+  aci_tenant_monitoring_policy: true
+  aci_tenant_span_destination_group: false
+  aci_tenant_span_source_group: false
+
+  # --- Tenant resources: disabled ---
+  aci_endpoint_security_group: false
+  aci_useg_endpoint_group: false
+  aci_imported_contract: true
+  aci_oob_contract: false
+  aci_oob_endpoint_group: false
+  aci_oob_external_management_instance: false
+  aci_inband_endpoint_group: false
+  aci_l4l7_device: false
+  aci_imported_l4l7_device: false
+  aci_device_selection_policy: false
+  aci_service_graph_template: false
+  aci_service_epg_policy: false
+  aci_redirect_policy: false
+  aci_redirect_backup_policy: false
+  aci_redirect_health_group: false
+  aci_dhcp_relay_policy: true
+  aci_dhcp_option_policy: false
+  aci_infra_dhcp_relay_policy: false
+  aci_sr_mpls_l3out: false
+  aci_sr_mpls_l3out_node_profile: false
+  aci_sr_mpls_l3out_interface_profile: false
+  aci_sr_mpls_external_endpoint_group: false
+  aci_sr_mpls_global_configuration: false
+  aci_track_list: false
+  aci_track_member: false
+  aci_trust_control_policy: false
+  aci_multicast_route_map: false
+  aci_pim_policy: false
+  aci_igmp_interface_policy: false
+  aci_igmp_snooping_policy: false
+  aci_hsrp_group_policy: false
+  aci_hsrp_interface_policy: false
+  aci_ospf_interface_policy: true
+  aci_ospf_route_summarization_policy: false
+  aci_ospf_timer_policy: false
+  aci_eigrp_interface_policy: false
+  aci_nd_interface_policy: false
+  aci_nd_ra_prefix_policy: false
+  aci_data_plane_policing_policy: false
+  aci_l2_mtu_policy: false
+  aci_priority_flow_control_policy: false
+  aci_psu_policy: false
+  aci_mpls_custom_qos_policy: false
+  aci_vxlan_custom_qos_policy: false
+  aci_border_gateway_set_policy: false
+  aci_atomic_counter: false
+  aci_health_score_evaluation_policy: false
+  aci_endpoint_ip_tag_policy: false
+  aci_endpoint_mac_tag_policy: false
+  aci_netflow_exporter: false
+  aci_netflow_monitor: false
+  aci_netflow_record: false
+  aci_netflow_vmm_exporter: false
+  aci_tenant_netflow_exporter: false
+  aci_tenant_netflow_monitor: false
+  aci_tenant_netflow_record: false
+  aci_remote_vxlan_fabrics: false
+  aci_vspan_destination_group: false
+  aci_vspan_session: false
+  aci_vxlan_l3out: false
+  aci_vxlan_l3out_node_profile: false
+  aci_vxlan_l3out_interface_profile: false

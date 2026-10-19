@@ -1,0 +1,33 @@
+# NAC ACI Defaults for the example site
+#
+# Applied to all tenants. Reduces boilerplate in tenant YAML files.
+
+apic:
+  defaults:
+    tenants:
+      vrfs:
+        enforcement_direction: ingress
+        enforcement_preference: enforced
+
+      bridge_domains:
+        mac: 00:22:BD:F8:19:FF
+        arp_flooding: true
+        ip_dataplane_learning: true
+        limit_ip_learn_to_subnets: true
+        unicast_routing: true
+        unknown_unicast: proxy
+        multi_destination_flooding: bd-flood
+
+      application_profiles:
+        endpoint_groups:
+          flood_in_encap: false
+          intra_epg_isolation: false
+          preferred_group: false
+
+      contracts:
+        scope: context
+
+      filters:
+        entries:
+          ethertype: unspecified
+          protocol: unspecified

@@ -1,0 +1,6 @@
+# Synthetic standalone baseline. Adapt inputs; not an APIC observation.
+apic:
+  tenants:
+    - name: Example
+      vrfs:
+        - name: Applications
